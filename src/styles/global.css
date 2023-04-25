@@ -8,5 +8,17 @@ a,
 
 .gradient-text {
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+  @apply bg-gradient-to-br from-sky-700 via-cyan-700 to-teal-700;
+}
+
+.gradient-text-light {
+  @apply bg-clip-text text-transparent;
+  @apply bg-gradient-to-br from-cyan-100 via-sky-100 to-teal-100;
+}
+
+.gradient-bg-btn {
+  @apply mt-8 flex w-full justify-center rounded-md py-2 font-semibold leading-6 text-white shadow-sm text-sm;
+  @apply bg-gradient-to-br from-sky-700 to-teal-700;
+  @apply hover:bg-gradient-to-br hover:from-teal-600 hover:to-sky-600;
+  @apply focus:animate-ping focus:bg-gradient-to-br focus:from-sky-300 focus:to-teal-300;
 }

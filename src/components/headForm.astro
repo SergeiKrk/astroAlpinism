@@ -1,0 +1,47 @@
+---
+---
+
+<form>
+  <div class="border-b border-white/10 pb-12">
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+      <div class="sm:col-span-2 sm:col-start-1">
+        <label for="city" class="block font-medium leading-6 text-white text-sm"
+          >City</label
+        >
+        <div class="mt-2">
+          <input
+            type="text"
+            name="city"
+            id="city"
+            autocomplete="address-level2"
+            class="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:leading-6 sm:text-sm"
+          />
+        </div>
+      </div>
+
+      <div class="sm:col-span-2">
+        <label
+          for="region"
+          class="block font-medium leading-6 text-white text-sm"
+          >State / Province</label
+        >
+        <div class="mt-2">
+          <select
+            name="region"
+            id="region"
+            autocomplete="address-level2"
+            class="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:leading-6 sm:text-sm"
+          >
+            <option>USD</option>
+            <option>CAD</option>
+            <option>EUR</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="sm:col-span-2">
+        <button type="submit" class="gradient-bg-btn">Заказать</button>
+      </div>
+    </div>
+  </div>
+</form>
