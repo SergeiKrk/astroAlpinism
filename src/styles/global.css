@@ -28,3 +28,8 @@ a,
   @apply hover:bg-gradient-to-tr hover:from-teal-500 hover:to-sky-500;
   @apply focus:ring-1 focus:ring-teal-500;
 }
+
+.textPrimary {
+  @apply bg-clip-text text-transparent;
+  @apply bg-gradient-to-br from-teal-600 to-cyan-800;
+}
