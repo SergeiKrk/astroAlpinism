@@ -1,5 +1,15 @@
 ---
-import ContentSection from "~/components/content-section.astro";
+import { Picture } from "@astrojs/image/components";
+import type { ShowcaseSite } from "~/types";
+
+import rocket from "~/assets/ochistka-krysh-ot-sosulek.jpg";
+
+export interface Props {
+  site: ShowcaseSite;
+}
+
+const widths = [200, 400];
+const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
 <section
@@ -16,7 +26,7 @@ import ContentSection from "~/components/content-section.astro";
         <div class="ml-auto lg:col-start-2 lg:max-w-2xl">
           <h2 class="gradientText mb-10 font-extrabold tracking-tight text-5xl">
             Высотные работы
-          </h2>
+          </h2>{rocket}
           <p class="max-w-xl font-extrabold text-2xl">
             Мы <span class="textPrimary">квалифицированные</span> специалисты имеем
             <span class="textPrimary">лицензию</span> для работ на высоте.
@@ -47,11 +57,12 @@ import ContentSection from "~/components/content-section.astro";
             <div
               class="flex items-end justify-center space-x-4 lg:justify-start"
             >
-              <img
+              <Picture
                 class="w-32 rounded-lg shadow-lg md:w-56"
-                width="200"
-                src="/images/object/8.jpg"
-                alt="1"
+                src={rocket}
+                widths={widths}
+                sizes={sizes}
+                alt={`A rocketship in space.`}
               />
               <img
                 class="w-40 rounded-lg shadow-lg md:w-64"
