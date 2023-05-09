@@ -2,7 +2,11 @@
 import { Picture } from "@astrojs/image/components";
 import type { ShowcaseSite } from "~/types";
 
-import rocket from "~/assets/ochistka-krysh-ot-sosulek.jpg";
+import sosulky from "~/assets/ochistka-krysh-ot-sosulek.jpg";
+import remontFasada from "~/assets/Remont-fasadov-1.jpg";
+import pokraskaFasada from "~/assets/pokraska-fasada.jpg";
+import germetShvov from "~/assets/germetizaciya-shvov.jpg";
+import Badges from "./Badges.astro";
 
 export interface Props {
   site: ShowcaseSite;
@@ -26,31 +30,15 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
         <div class="ml-auto lg:col-start-2 lg:max-w-2xl">
           <h2 class="gradientText mb-10 font-extrabold tracking-tight text-5xl">
             Высотные работы
-          </h2>{rocket}
+          </h2>
           <p class="max-w-xl font-extrabold text-2xl">
-            Мы <span class="textPrimary">квалифицированные</span> специалисты имеем
+            Мы <span class="textPrimary">квалифицированные</span> специалисты и имеем
             <span class="textPrimary">лицензию</span> для работ на высоте.
           </p>
           <p class="mt-4 leading-6 text-gray-500 text-lg">
             Выполняем все виды услуг промышленного альпинизма и высотных работ:
           </p>
-          <div class="mt-8 gap-6 md:grid md:grid-cols-2">
-            <div class="flex">
-              <span
-                class="drark:bg-transparent flex h-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100 px-4 py-2 text-green-800 dark:text-green-500"
-              >
-                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                <span class="py-4 text-xs">Фасадные работы</span>
-              </span>
-            </div>
-          </div>
+          <Badges />
         </div>
         <div class="relative-20 relative mt-10 lg:col-start-1 lg:-mx-4 lg:mt-0">
           <div class="relative space-y-4">
@@ -59,32 +47,35 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
             >
               <Picture
                 class="w-32 rounded-lg shadow-lg md:w-56"
-                src={rocket}
+                src={pokraskaFasada}
                 widths={widths}
                 sizes={sizes}
-                alt={`A rocketship in space.`}
+                alt={`покраска фасада`}
               />
-              <img
+              <Picture
                 class="w-40 rounded-lg shadow-lg md:w-64"
-                width="260"
-                src="/images/landscape/4.jpg"
-                alt="2"
+                src={sosulky}
+                widths={widths}
+                sizes={sizes}
+                alt={`Очистка крыш от сосулек`}
               />
             </div>
             <div
               class="ml-12 flex items-start justify-center space-x-4 lg:justify-start"
             >
-              <img
+              <Picture
                 class="w-24 rounded-lg shadow-lg md:w-40"
-                width="170"
-                src="/images/landscape/3.jpg"
-                alt="3"
+                src={remontFasada}
+                widths={widths}
+                sizes={sizes}
+                alt={`ремонт фасада`}
               />
-              <img
+              <Picture
                 class="w-32 rounded-lg shadow-lg md:w-56"
-                width="200"
-                src="/images/object/9.jpg"
-                alt="4"
+                src={germetShvov}
+                widths={widths}
+                sizes={sizes}
+                alt={`герметизация швов`}
               />
             </div>
           </div>
