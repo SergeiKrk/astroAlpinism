@@ -2,7 +2,7 @@
 interface Props {
   badge: string;
 }
-
+import type { Badges } from "~/types";
 const {
   badge = [
     "Клининговые работы",
@@ -12,12 +12,15 @@ const {
     "Такелажные работы",
   ],
 } = Astro.props;
+export interface Props {
+  site: Badges;
+}
 ---
 
 <div class="mt-8 flex-1">
   {
     badge.map((bdg) => (
-      <span class="mb-2 mr-2 inline-block rounded-full bg-fuchsia-600 bg-gradient-to-tr from-sky-100 via-cyan-100 to-teal-100 px-4 py-0 text-xs text-sky-800 dark:bg-transparent dark:text-sky-500">
+      <span class="mb-2 mr-2 inline-block rounded-full bg-fuchsia-600 bg-gradient-to-tr from-sky-100 via-cyan-100 to-teal-100 px-4 py-0 text-xs text-sky-800">
         {bdg}
       </span>
     ))

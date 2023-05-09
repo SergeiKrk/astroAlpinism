@@ -26,3 +26,7 @@ export interface ShowcaseSite {
   image: ImageMetadata;
   url: string;
 }
+
+export interface Badges {
+  badge: string;
+}
