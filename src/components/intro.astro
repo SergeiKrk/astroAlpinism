@@ -1,16 +1,11 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import type { ShowcaseSite } from "~/types";
 
 import sosulky from "~/assets/ochistka-krysh-ot-sosulek.jpg";
 import remontFasada from "~/assets/Remont-fasadov-1.jpg";
 import pokraskaFasada from "~/assets/pokraska-fasada.jpg";
 import germetShvov from "~/assets/germetizaciya-shvov.jpg";
 import Badges from "./Badges.astro";
-
-export interface Props {
-  site: ShowcaseSite;
-}
 
 const widths = [200, 400];
 const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";

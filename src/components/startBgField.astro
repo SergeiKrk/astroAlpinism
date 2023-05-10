@@ -1,0 +1,25 @@
+---
+import { Picture } from "@astrojs/image/components";
+
+import BgImg from "~/assets/bg.jpeg";
+const widths = [1320, 1920];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+---
+
+<div class="absolute inset-0">
+  <div
+    class="relative h-full overflow-hidden bg-cover bg-center bg-no-repeat blur-sm"
+  >
+    <Picture
+      class="h-full w-full rounded-b-lg"
+      src={BgImg}
+      widths={widths}
+      sizes={sizes}
+      alt={`покраска фасада`}
+    />
+    <div
+      class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-slate-950/[.75] bg-fixed"
+    >
+    </div>
+  </div>
+</div>

@@ -29,4 +29,9 @@ export interface ShowcaseSite {
 
 export interface Badges {
   badge: string;
+  bdg: string;
+}
+
+export interface Bdg {
+  bdg: string;
 }
