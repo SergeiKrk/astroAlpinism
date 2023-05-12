@@ -2,29 +2,49 @@
 import { Icon } from "astro-icon";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
+import { Picture } from "@astrojs/image/components";
+
+import Logo from "~/assets/logo150grad.png";
 
 const navItems: Array<NavItem> = [
   { title: "Features", url: "#features" },
   { title: "Compatibility", url: "#compatibility" },
   { title: "Showcase", url: "#showcase" },
 ];
+const widths = [120];
+const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent py-2 pl-6 pr-8 text-white lg:pl-8"
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">ПромАльпВысота</h1>
-    <Icon name="logomark" class="h-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+  <a class="flex items-center gap-1 hover:!text-default" href="/">
+    <Picture
+      class="h-16 dark:hidden"
+      src={Logo}
+      widths={widths}
+      sizes={sizes}
+      alt={`Логотип ПромАльпВысота`}
+    />
+    <span class="ml-4 hidden sm:block">ПромАльпВысота</span>
   </a>
 
-  <div class="flex items-center gap-6">
+  <div class="flex items-center gap-6 lg:order-last">
     <div class="hidden sm:block">
       <ul class="flex items-center gap-6">
         <li>
           <a class="text-sm" href="tel:+79372758313"> +7 937 275 83 13</a>
+        </li>
+        <li>
+          <a href="https://t.me/79372758313">
+            <Icon name="logos:telegram" class="h-10" />
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/79372758313">
+            <Icon name="logos:whatsapp" class="h-10" />
+          </a>
         </li>
       </ul>
     </div>
@@ -56,7 +76,7 @@ const navItems: Array<NavItem> = [
       <ThemeSwitcher />
     </div>
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
-      <div class="fixed inset-0 bg-default px-8 py-4 text-default">
+      <div class="fixed inset-0 bg-default px-4 py-4 text-default">
         <div class="space-y-4" role="dialog" aria-modal="true">
           <header class="text-right">
             <button
@@ -69,7 +89,13 @@ const navItems: Array<NavItem> = [
             </button>
           </header>
           <div class="flex justify-center">
-            <Icon name="logomark" class="h-16" />
+            <Picture
+              class="h-16"
+              src={Logo}
+              widths={widths}
+              sizes={sizes}
+              alt={`Логотип ПромАльпВысота`}
+            />
           </div>
           <nav>
             <ul class="flex flex-col">
