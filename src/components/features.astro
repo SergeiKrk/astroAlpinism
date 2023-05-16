@@ -1,91 +1,127 @@
 ---
 import { Icon } from "astro-icon";
-import ContentSection from "~/components/content-section.astro";
 import type { FeatureItem } from "~/types";
 
 const features: Array<FeatureItem> = [
   {
-    title: "Ремонт межпанельных швов",
-    description: "Утепление межпанельных швов",
+    title: "Ремонт швов",
+    description: "Ремонт и утепление межпанельных швов",
     icon: "mdi:spray",
     price: "от 250 руб.",
+    href: "/",
   },
   {
     title: "Утепление стен снаружи",
     description: "Наружное утепление стен пеноплексом",
     icon: "map:abseiling",
     price: "от 825 руб.",
+    href: "/",
   },
   {
-    title: "Герметизация окон и балконов",
-    description: "bi:window",
+    title: "Герметизация балконов",
+    description: "Герметизация окон и балконов",
     icon: "iconoir:balcony",
     price: "от 2000 руб.",
+    href: "/",
   },
   {
     title: "Мойка фасадов зданий",
     description: "Фасады и витражи. Окна и балконы",
     icon: "mdi:graph",
     price: "от 70 руб.",
+    href: "/",
   },
   {
     title: "Уборка снега с крыш",
     description: "Очистка кровли от снега, наледи и сосулек",
     icon: "bi:snow2",
     price: "от 50 руб.",
+    href: "/",
   },
   {
     title: "Фасадные работы",
     description: "Покраска, штукатурка, гидрофобизация",
     icon: "map:painter",
     price: "от 70 руб.",
+    href: "/",
   },
   {
     title: "Кровельные работы",
     description: "Наплавляемая кровля, скатная кровля",
     icon: "mdi:account-group",
     price: "от 540 руб.",
+    href: "/",
   },
   {
     title: "Покраска металлоконструкций",
     description: "Фермы, АМС, ЛЭП, резервуары и т.п.",
     icon: "mdi:account-group",
     price: "от 80 руб.",
+    href: "/",
   },
   {
-    title: "Монтаж, демонтаж металлоконструкций",
+    title: "Монтаж металлоконструкций",
     description: "Фермы, мачты, газходы. Изготовление и...",
     icon: "material-symbols:construction",
     price: "от 18500 руб.",
+    href: "/",
   },
   {
-    title: "Монтаж наружной рекламы",
+    title: "Наружная реклама",
     description: "Монтаж баннеров, рекламных конструкций",
     icon: "mdi:account-group",
     price: "от 150 руб.",
+    href: "/",
   },
   {
-    title: "Монтажные работы на высоте",
+    title: "Такелажные работы",
     description: "Монтаж оборудования, подъем грузов и...",
     icon: "mdi:account-group",
     price: "от 7700 руб.",
+    href: "/",
+  },
+  {
+    title: "Монтаж оборудования",
+    description: "Монтаж оборудования, подъем грузов и...",
+    icon: "mdi:account-group",
+    price: "от 7700 руб.",
+    href: "/",
   },
 ];
 ---
 
-<ContentSection title="Наши услуги" id="features">
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    {
-      features.map(({ title, description, icon, price }) => (
-        <li class="border-default bg-offset flex flex-col items-center gap-4 border p-6">
-          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
-            <Icon name={icon} />
-          </div>
-          <p class="text-center text-xl font-extrabold">{title}</p>
-          <p class="text-offset text-center text-sm">{description}</p>
-          <p class="text-offset text-center text-xs">{price}</p>
-        </li>
-      ))
-    }
-  </ul>
-</ContentSection>
+<section
+  id="features"
+  class="flex scroll-mt-24 flex-col items-center gap-4 space-y-8"
+>
+  <h2 class="gradientText text-center font-extrabold tracking-tight text-5xl">
+    Наши услуги
+  </h2>
+  <div class="max-w-8xl mx-auto px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div
+      class="grid items-center gap-6 sm:grid-cols-2 md:gap-10 lg:grid-cols-3"
+    >
+      {
+        features.map(({ title, description, icon, price, href }) => (
+          <a
+            href={href}
+            class="h-full w-full rounded-lg bg-white p-5 shadow-lg"
+          >
+            <div class="mb-3 flex items-center gap-x-4">
+              <div class="inline-flex h-[82px] w-[82px] items-center justify-center rounded-full border-4 border-sky-100 bg-gradient-to-br from-sky-700 via-cyan-700 to-teal-700">
+                <Icon class="h-9 w-9 text-sky-100" name={icon} />
+              </div>
+              <div class="max-w-24 flex-shrink-0">
+                <h3 class="text-md block font-semibold text-gray-800 dark:text-white">
+                  {title}
+                </h3>
+                <p class="text-xs text-gray-600 dark:text-gray-400">{price}</p>
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400">{description}</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

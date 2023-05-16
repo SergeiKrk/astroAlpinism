@@ -9,6 +9,7 @@ export interface FeatureItem {
   icon: string;
   title: string;
   price: string;
+  href: string;
 }
 
 export interface FooterLink {
