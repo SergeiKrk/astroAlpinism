@@ -6,28 +6,28 @@ const features: Array<FeatureItem> = [
   {
     title: "Ремонт швов",
     description: "Ремонт и утепление межпанельных швов",
-    icon: "mdi:spray",
+    icon: "ri:layout-right-fill",
     price: "от 250 руб.",
     href: "/",
   },
   {
     title: "Утепление стен снаружи",
     description: "Наружное утепление стен пеноплексом",
-    icon: "map:abseiling",
+    icon: "mdi:animation",
     price: "от 825 руб.",
     href: "/",
   },
   {
     title: "Герметизация балконов",
     description: "Герметизация окон и балконов",
-    icon: "map:store",
+    icon: "mdi:balcony",
     price: "от 2000 руб.",
     href: "/",
   },
   {
     title: "Мойка фасадов зданий",
     description: "Фасады и витражи. Окна и балконы",
-    icon: "mdi:graph",
+    icon: "entypo:bucket",
     price: "от 70 руб.",
     href: "/",
   },
@@ -41,7 +41,7 @@ const features: Array<FeatureItem> = [
   {
     title: "Фасадные работы",
     description: "Покраска, штукатурка, гидрофобизация",
-    icon: "map:painter",
+    icon: "tabler:building-community",
     price: "от 70 руб.",
     href: "/",
   },
@@ -55,35 +55,35 @@ const features: Array<FeatureItem> = [
   {
     title: "Покраска металлоконструкций",
     description: "Фермы, АМС, ЛЭП, резервуары и т.п.",
-    icon: "game-icons:aerosol",
+    icon: "ri:paint-brush-fill",
     price: "от 80 руб.",
     href: "/",
   },
   {
     title: "Монтаж металлоконструкций",
     description: "Фермы, мачты, газходы. Изготовление и...",
-    icon: "map:city-hall",
+    icon: "mdi:tower-fire",
     price: "от 18500 руб.",
     href: "/",
   },
   {
     title: "Наружная реклама",
     description: "Монтаж баннеров, рекламных конструкций",
-    icon: "mdi:account-group",
+    icon: "mdi:billboard",
     price: "от 150 руб.",
     href: "/",
   },
   {
     title: "Такелажные работы",
     description: "Монтаж оборудования, подъем грузов и...",
-    icon: "map:department-store",
-    price: "от 7700 руб.",
+    icon: "mdi:elevator-up",
+    price: "от 85 руб./кг",
     href: "/",
   },
   {
-    title: "Монтаж оборудования",
-    description: "Монтаж оборудования, подъем грузов и...",
-    icon: "mdi:account-group",
+    title: "Монтажные высотные работы",
+    description: "Монтаж оборудования на высоте",
+    icon: "mdi:account-hard-hat",
     price: "от 7700 руб.",
     href: "/",
   },
@@ -105,13 +105,16 @@ const features: Array<FeatureItem> = [
         features.map(({ title, description, icon, price, href }) => (
           <a
             href={href}
-            class="h-full w-full rounded-lg bg-white p-5 shadow-lg"
+            class="h-full w-full rounded-lg bg-white p-5 shadow-lg hover:shadow-2xl"
           >
             <div class="mb-3 flex items-center gap-x-4">
               <div class="inline-flex h-[82px] w-[82px] items-center justify-center rounded-full border-4 border-sky-100 bg-gradient-to-br from-sky-700 via-cyan-700 to-teal-700">
-                <Icon class="h-9 w-9 text-sky-100" name={icon} />
+                <Icon
+                  class="h-9 w-9 text-sky-100 duration-200 hover:scale-150"
+                  name={icon}
+                />
               </div>
-              <div class="max-w-24 flex-shrink-0">
+              <div class="max-w-24">
                 <h3 class="text-md block font-semibold text-gray-800 dark:text-white">
                   {title}
                 </h3>
