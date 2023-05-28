@@ -4,12 +4,19 @@ export interface CompatibilityItem {
   url: string;
 }
 
-export interface FeatureItem {
+export interface ServiceItem {
   description: string;
   icon: string;
   title: string;
   price: string;
   href: string;
+}
+
+export interface ReviewsItem {
+  avatar: string;
+  content: string;
+  name: string;
+  designation: string;
 }
 
 export interface FooterLink {
