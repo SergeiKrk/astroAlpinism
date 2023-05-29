@@ -5,7 +5,7 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  site: "https://astro-moon-landing.netlify.app/",
+  site: "http://localhost:3000/",
   integrations: [
     tailwind(),
     image({

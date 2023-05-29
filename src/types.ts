@@ -12,9 +12,8 @@ export interface ServiceItem {
   href: string;
 }
 
-export interface ReviewsItem {
+export interface TestimonialsItem {
   avatar: string;
-  content: string;
   name: string;
   designation: string;
 }
