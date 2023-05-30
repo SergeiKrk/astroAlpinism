@@ -1,6 +1,6 @@
-// adapted from https://github.com/withastro/astro.build/blob/112bdc723b3ba305997c95d7ce02304624d0d3ce/src/data/showcase/index.ts
+// adapted from https://github.com/withastro/astro.build/blob/112bdc723b3ba305997c95d7ce02304624d0d3ce/src/data/Testimonial/index.ts
 
-import type { ShowcaseSite } from "~/types";
+import type { TestimonialSite } from "~/types";
 import sitesData from "./sites.json";
 
 const allImages = import.meta.glob<ImageMetadata>("./images/*.{png,jpg,jpeg}", {
@@ -8,9 +8,9 @@ const allImages = import.meta.glob<ImageMetadata>("./images/*.{png,jpg,jpeg}", {
   import: "default",
 });
 
-let _loadShowcase: Promise<Array<ShowcaseSite>>;
+let _loadTestimonial: Promise<Array<TestimonialSite>>;
 
-async function loadShowcase(): Promise<Array<ShowcaseSite>> {
+async function loadTestimonial(): Promise<Array<TestimonialSite>> {
   const sites = await Promise.all(
     sitesData.map(async (site) => {
       if (!(site.image in allImages)) {
@@ -31,7 +31,7 @@ async function loadShowcase(): Promise<Array<ShowcaseSite>> {
   return sites;
 }
 
-export async function getShowcase() {
-  _loadShowcase = _loadShowcase || loadShowcase();
-  return _loadShowcase;
+export async function getTestimonial() {
+  _loadTestimonial = _loadTestimonial || loadTestimonial();
+  return _loadTestimonial;
 }

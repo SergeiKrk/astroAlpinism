@@ -35,6 +35,12 @@ export interface ShowcaseSite {
   url: string;
 }
 
+export interface TestimonialSite {
+  title: string;
+  image: ImageMetadata;
+  url: string;
+}
+
 export interface Badges {
   badge: string;
   bdg: string;
