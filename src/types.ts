@@ -15,7 +15,7 @@ export interface ServiceItem {
 export interface TestimonialsItem {
   avatar: string;
   name: string;
-  designation: string;
+  testimonial: string;
 }
 
 export interface FooterLink {
