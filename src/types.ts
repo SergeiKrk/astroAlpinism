@@ -29,16 +29,10 @@ export interface NavItem {
   url: string;
 }
 
-export interface ShowcaseSite {
-  title: string;
-  image: ImageMetadata;
-  url: string;
-}
-
 export interface TestimonialSite {
-  title: string;
+  name: string;
   image: ImageMetadata;
-  url: string;
+  testimonial: string;
 }
 
 export interface Badges {
