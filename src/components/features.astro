@@ -33,10 +33,7 @@ const features: Array<FeatureItem> = [
     {
       features.map(({ title, description, icon }) => (
         <div class="col-span-6 text-center sm:col-span-4">
-          <Icon
-            class="mx-auto h-9 h-auto w-7 w-9 text-gray-800 md:w-9"
-            name={icon}
-          />
+          <Icon class="mx-auto h-9 w-9 text-gray-800" name={icon} />
           <div class="mt-2 sm:mt-6">
             <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
               {title}
