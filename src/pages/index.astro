@@ -8,19 +8,21 @@ import Intro from "~/components/intro.astro";
 import Splash from "~/components/splash.astro";
 import Layout from "~/layouts/Layout.astro";
 import Testimonials from "~/components/testimonials.astro";
+import Features from "~/components/features.astro";
 ---
 
 <Layout
   title="ПРОМЫШЛЕННЫЙ АЛЬПИНИЗМ | ВЫСОТНЫЕ РАБОТЫ в Ульяновске"
   description="Услуги промышленных альпинистов в Ульяновске."
 >
-  <!-- <Header client:load /> -->
-  <!-- <Splash client:load /> -->
+  <Header client:load />
+  <Splash client:load />
   <div class="space-y-24 px-8 py-32">
     <Intro client:visible />
     <Services client:visible />
     <Testimonials client:visible />
-    <Compatibility client:visible />
+    <Features client:visible />
+    <!-- <Compatibility client:visible /> -->
   </div>
   <Footer client:visible />
 </Layout>

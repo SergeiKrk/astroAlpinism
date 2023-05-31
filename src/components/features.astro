@@ -1,0 +1,89 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import { Icon } from "astro-icon";
+import type { FeatureItem } from "~/types";
+
+const features: Array<FeatureItem> = [
+  {
+    title: "Ремонт швов",
+    description: "Ремонт и утепление межпанельных швов",
+    icon: "ri:layout-right-fill",
+  },
+  {
+    title: "Утепление стен снаружи",
+    description: "Наружное утепление стен пеноплексом",
+    icon: "mdi:animation",
+  },
+  {
+    title: "Герметизация балконов",
+    description: "Герметизация окон и балконов",
+    icon: "mdi:balcony",
+  },
+];
+---
+
+<ContentSection title="Наши преимущества" id="features">
+  <Fragment slot="lead">
+    Вот что клиенты пишут о нас на <a
+      href="https://www.avito.ru/user/6375868aba354c02372283294767b6d9/profile"
+      >Авито</a
+    >
+  </Fragment>
+  <div class="mx-auto grid max-w-3xl grid-cols-12 gap-6 lg:gap-8">
+    {
+      features.map(({ title, description, icon }) => (
+        <div class="col-span-6 text-center sm:col-span-4">
+          <Icon
+            class="mx-auto h-9 h-auto w-7 w-9 text-gray-800 md:w-9"
+            name={icon}
+          />
+          <div class="mt-2 sm:mt-6">
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+              {title}
+            </h3>
+            <p>{description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div
+    class="mx-auto mt-20 grid max-w-7xl grid-cols-12 items-center gap-x-2 px-4 py-10 sm:gap-x-6 sm:px-6 lg:gap-x-8 lg:px-8 lg:py-14"
+  >
+    <div class="col-span-4 hidden md:col-span-3 md:block">
+      <img
+        class="rounded-xl"
+        src="https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80"
+        alt="Image Description"
+      />
+    </div>
+    <!-- End Col -->
+
+    <div class="col-span-4 md:col-span-3">
+      <img
+        class="rounded-xl"
+        src="https://images.unsplash.com/photo-1587613991119-fbbe8e90531d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1003&q=80"
+        alt="Image Description"
+      />
+    </div>
+    <!-- End Col -->
+
+    <div class="col-span-4 md:col-span-3">
+      <img
+        class="rounded-xl"
+        src="https://images.unsplash.com/photo-1554295405-abb8fd54f153?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=652&q=80"
+        alt="Image Description"
+      />
+    </div>
+    <!-- End Col -->
+
+    <div class="col-span-4 md:col-span-3">
+      <img
+        class="rounded-xl"
+        src="https://images.unsplash.com/photo-1640622300473-977435c38c04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+        alt="Image Description"
+      />
+    </div>
+    <!-- End Col -->
+  </div>
+</ContentSection>

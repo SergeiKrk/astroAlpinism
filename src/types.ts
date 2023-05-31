@@ -12,6 +12,12 @@ export interface ServiceItem {
   href: string;
 }
 
+export interface FeatureItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 export interface TestimonialsItem {
   avatar: string;
   name: string;
