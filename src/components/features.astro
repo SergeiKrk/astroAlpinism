@@ -1,51 +1,69 @@
 ---
 import ContentSection from "~/components/content-section.astro";
-import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
 import type { FeatureItem } from "~/types";
 
 const features: Array<FeatureItem> = [
   {
-    title: "Ремонт швов",
-    description: "Ремонт и утепление межпанельных швов",
-    icon: "ri:layout-right-fill",
+    quantity: "11",
+    title: "лет опыта высотных работ",
+    description: "Работаем качественно, быстро, а главное безопасно",
   },
   {
-    title: "Утепление стен снаружи",
-    description: "Наружное утепление стен пеноплексом",
-    icon: "mdi:animation",
+    quantity: "100%",
+    title: "Соблюдение правил техники безопасности",
+    description:
+      "Все наши промышленные альпинисты являются сертифицированными специалистами",
   },
   {
-    title: "Герметизация балконов",
-    description: "Герметизация окон и балконов",
-    icon: "mdi:balcony",
+    quantity: "6",
+    title: "Альпинистов",
+    description:
+      "Выполняем любой поставленный объем работ качественно и в срок",
+  },
+  {
+    quantity: "100%",
+    title: "Гарантируем соблюдение сроков",
+    description:
+      "Адекватная оценка объемов работ нашими специалистами позволяет выполнять работы в срок",
+  },
+  {
+    quantity: "0",
+    title: "Бесплатный выезд специалиста",
+    description:
+      "Наш сотрудник проконсультирует Вас относительно предстоящих работ, оценив их объем и стоимость",
+  },
+  {
+    quantity: "1200",
+    title: "Выполненных объектов",
+    description:
+      "Множество довольных заказчиков являются гарантом качества выполненных нами работ",
   },
 ];
 ---
 
 <ContentSection title="Наши преимущества" id="features">
-  <Fragment slot="lead">
-    Вот что клиенты пишут о нас на <a
-      href="https://www.avito.ru/user/6375868aba354c02372283294767b6d9/profile"
-      >Авито</a
-    >
-  </Fragment>
-  <div class="mx-auto grid max-w-3xl grid-cols-12 gap-6 lg:gap-8">
+  <Fragment slot="lead">Что вы получаете, выбирая нас?</Fragment>
+  <div class="mx-auto grid max-w-7xl grid-cols-12 gap-6 lg:gap-8">
     {
-      features.map(({ title, description, icon }) => (
-        <div class="col-span-6 text-center sm:col-span-4">
-          <Icon class="mx-auto h-9 w-9 text-gray-800" name={icon} />
+      features.map(({ title, description, quantity }) => (
+        <div class="col-span-2 text-center sm:col-span-4">
           <div class="mt-2 sm:mt-6">
-            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+            <p class="gradientText mt-2 text-4xl font-bold text-blue-500 sm:mt-3 sm:text-6xl">
+              {quantity}
+            </p>
+            <p class="text-sm font-semibold text-gray-800 dark:text-gray-200 sm:text-xl">
               {title}
-            </h3>
-            <p>{description}</p>
+            </p>
+            <p class="text-gray-600 dark:text-gray-400">{description}</p>
           </div>
         </div>
       ))
     }
   </div>
+  <!-- Grid -->
   <div
-    class="mx-auto mt-20 grid max-w-7xl grid-cols-12 items-center gap-x-2 px-4 py-10 sm:gap-x-6 sm:px-6 lg:gap-x-8 lg:px-8 lg:py-14"
+    class="mt-20 grid grid-cols-12 items-center gap-x-2 sm:gap-x-6 lg:gap-x-8"
   >
     <div class="col-span-4 hidden md:col-span-3 md:block">
       <img
@@ -83,4 +101,5 @@ const features: Array<FeatureItem> = [
     </div>
     <!-- End Col -->
   </div>
+  <!-- End Grid -->
 </ContentSection>

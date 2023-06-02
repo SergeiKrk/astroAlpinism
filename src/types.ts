@@ -15,7 +15,12 @@ export interface ServiceItem {
 export interface FeatureItem {
   title: string;
   description: string;
-  icon: string;
+  quantity: string;
+}
+
+export interface ImgCasesItem {
+  imag: ImageMetadata;
+  alt: string;
 }
 
 export interface TestimonialsItem {
