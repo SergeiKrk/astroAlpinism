@@ -2,6 +2,15 @@
 import ContentSection from "~/components/content-section.astro";
 import { Picture } from "@astrojs/image/components";
 import type { FeatureItem } from "~/types";
+import caseOne from "~/assets/case1.jpg";
+import caseTwo from "~/assets/case2.jpg";
+import caseThree from "~/assets/case3.jpg";
+import caseFour from "~/assets/case4.jpg";
+import type { TestimonialSite } from "~/types";
+
+
+const widths = [400, 800];
+const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 
 const features: Array<FeatureItem> = [
   {
@@ -44,7 +53,9 @@ const features: Array<FeatureItem> = [
 
 <ContentSection title="Наши преимущества" id="features">
   <Fragment slot="lead">Что вы получаете, выбирая нас?</Fragment>
-  <div class="mx-auto grid max-w-7xl grid-cols-12 gap-6 lg:gap-8">
+  <div
+    class="mx-auto grid max-w-6xl grid-cols-6 gap-6 lg:grid-cols-12 lg:gap-8"
+  >
     {
       features.map(({ title, description, quantity }) => (
         <div class="col-span-2 text-center sm:col-span-4">
@@ -63,40 +74,48 @@ const features: Array<FeatureItem> = [
   </div>
   <!-- Grid -->
   <div
-    class="mt-20 grid grid-cols-12 items-center gap-x-2 sm:gap-x-6 lg:gap-x-8"
+    class="mt-20 grid max-w-7xl grid-cols-12 items-center gap-x-4 sm:gap-x-6 lg:gap-x-8"
   >
-    <div class="col-span-4 hidden md:col-span-3 md:block">
-      <img
-        class="rounded-xl"
-        src="https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80"
-        alt="Image Description"
+    <div class="col-span-4 md:col-span-3">
+      <Picture
+        class="w-56 rounded-3xl shadow-lg md:w-56"
+        src={caseOne}
+        widths={widths}
+        sizes={sizes}
+        alt={`монтаж металлоконструкций`}
       />
     </div>
     <!-- End Col -->
 
     <div class="col-span-4 md:col-span-3">
-      <img
-        class="rounded-xl"
-        src="https://images.unsplash.com/photo-1587613991119-fbbe8e90531d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1003&q=80"
-        alt="Image Description"
+      <Picture
+        class="w-56 rounded-3xl shadow-lg md:w-56"
+        src={caseTwo}
+        widths={widths}
+        sizes={sizes}
+        alt={`ремонт элеваторов`}
       />
     </div>
     <!-- End Col -->
 
     <div class="col-span-4 md:col-span-3">
-      <img
-        class="rounded-xl"
-        src="https://images.unsplash.com/photo-1554295405-abb8fd54f153?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=652&q=80"
-        alt="Image Description"
+      <Picture
+        class="w-56 rounded-3xl shadow-lg md:w-56"
+        src={caseThree}
+        widths={widths}
+        sizes={sizes}
+        alt={`высотные работы`}
       />
     </div>
     <!-- End Col -->
 
     <div class="col-span-4 md:col-span-3">
-      <img
-        class="rounded-xl"
-        src="https://images.unsplash.com/photo-1640622300473-977435c38c04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
-        alt="Image Description"
+      <Picture
+        class="w-56 rounded-3xl shadow-lg md:w-56"
+        src={caseFour}
+        widths={widths}
+        sizes={sizes}
+        alt={`фасадные работы`}
       />
     </div>
     <!-- End Col -->

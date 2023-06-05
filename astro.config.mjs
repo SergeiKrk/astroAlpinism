@@ -7,7 +7,12 @@ export default defineConfig({
   output: "static",
   site: "http://localhost:3000/",
   integrations: [
-    tailwind(),
+    tailwind(
+      tailwind({
+        // Example: Provide a custom path to a Tailwind config file
+        config: { path: "./custom-config.cjs" },
+      })
+    ),
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
