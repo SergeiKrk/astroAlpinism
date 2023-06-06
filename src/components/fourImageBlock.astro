@@ -1,0 +1,40 @@
+---
+import { Image } from "@astrojs/image/components";
+// import type { ImgCasesItem } from "~/types";
+import caseOne from "~/assets/case1.jpg";
+import caseTwo from "~/assets/case2.jpg";
+import caseThree from "~/assets/case3.jpg";
+import caseFour from "~/assets/case4.jpg";
+
+const imageItems = [
+  {
+    imageSrc: "../assets/case1.jpg",
+    alt: "string",
+  },
+];
+---
+
+<div
+  class="mt-20 grid max-w-7xl grid-cols-12 items-center gap-x-4 sm:gap-x-6 lg:gap-x-8"
+>
+  <Image
+    class="w-56 rounded-3xl shadow-lg md:w-56"
+    src={caseOne}
+    alt={`монтаж металлоконструкций`}
+  />
+  <Image
+    class="w-56 rounded-3xl shadow-lg md:w-56"
+    src={caseTwo}
+    alt={`ремонт элеваторов`}
+  />
+  <Image
+    class="w-56 rounded-3xl shadow-lg md:w-56"
+    src={caseThree}
+    alt={`высотные работы`}
+  />
+  <Image
+    class="w-56 rounded-3xl shadow-lg md:w-56"
+    src={caseFour}
+    alt={`фасадные работы`}
+  />
+</div>

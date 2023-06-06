@@ -1,6 +1,7 @@
 ---
 import ContentSection from "~/components/content-section.astro";
-import { Picture } from "@astrojs/image/components";
+import FourImageBlock from "~/components/fourImageBlock.astro";
+import { Picture, Image } from "@astrojs/image/components";
 import type { FeatureItem } from "~/types";
 import caseOne from "~/assets/case1.jpg";
 import caseTwo from "~/assets/case2.jpg";
@@ -118,5 +119,6 @@ const features: Array<FeatureItem> = [
     </div>
     <!-- End Col -->
   </div>
+
   <!-- End Grid -->
 </ContentSection>
