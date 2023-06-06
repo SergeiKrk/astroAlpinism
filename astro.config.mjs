@@ -17,9 +17,4 @@ export default defineConfig({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
   ],
-  vite: {
-    ssr: {
-      external: ["svgo"],
-    },
-  },
 });
