@@ -1,0 +1,12 @@
+[build]
+  command = "yarn build" # Команда для сборки проекта
+  publish = "dist" # Папка, содержащая результаты сборки
+
+  [build.environment]
+    # Установка окружения, если требуется
+
+  [build.options]
+    # Дополнительные опции сборки, если требуется
+
+  [build.rollupOptions]
+    external = ["~/components/testimonials.astro"]
